@@ -1,0 +1,6 @@
+﻿  CalculationProcessor.cpp
+C:\Users\adi_p\Desktop\Facultate\Programrare orientata pe obiecte\Proiect POO\CalculatorPOO main\CalculationProcessor.cpp(46,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Facultate\Programrare orientata pe obiecte\Proiect POO\CalculatorPOO main\CalculationProcessor.cpp(97,5): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Facultate\Programrare orientata pe obiecte\Proiect POO\CalculatorPOO main\CalculationProcessor.cpp(147,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Facultate\Programrare orientata pe obiecte\Proiect POO\CalculatorPOO main\CalculationProcessor.cpp(153,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  CalculatorPOO.vcxproj -> C:\Users\adi_p\Desktop\Facultate\Programrare orientata pe obiecte\Proiect POO\CalculatorPOO main\x64\Debug\CalculatorPOO.exe
