@@ -129,13 +129,13 @@
   <ItemGroup>
     <ClCompile Include="Calculator.cpp" />
     <ClCompile Include="CalculatorPOO.cpp" />
-    <ClCompile Include="Operations.cpp" />
     <ClCompile Include="CalculationProcessor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Calculator.h" />
     <ClInclude Include="Operations.h" />
     <ClInclude Include="CalculationProcessor.h" />
+    <ClInclude Include="Polinomials.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

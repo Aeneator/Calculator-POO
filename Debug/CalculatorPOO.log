@@ -1,0 +1,3 @@
+﻿  CalculatorPOO.cpp
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(35,27): warning C4018: '<': signed/unsigned mismatch
+  CalculatorPOO.vcxproj -> C:\Users\adi_p\Desktop\Calculator-POO\Debug\CalculatorPOO.exe

@@ -18,13 +18,10 @@
     <ClCompile Include="CalculatorPOO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Calculator.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Operations.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CalculationProcessor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Calculator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -36,6 +33,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CalculationProcessor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Polinomials.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

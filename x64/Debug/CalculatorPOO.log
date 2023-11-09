@@ -1,6 +1,71 @@
-﻿  CalculationProcessor.cpp
-C:\Users\adi_p\Desktop\Facultate\Programrare orientata pe obiecte\Proiect POO\CalculatorPOO main\CalculationProcessor.cpp(46,29): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\adi_p\Desktop\Facultate\Programrare orientata pe obiecte\Proiect POO\CalculatorPOO main\CalculationProcessor.cpp(97,5): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\adi_p\Desktop\Facultate\Programrare orientata pe obiecte\Proiect POO\CalculatorPOO main\CalculationProcessor.cpp(147,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\adi_p\Desktop\Facultate\Programrare orientata pe obiecte\Proiect POO\CalculatorPOO main\CalculationProcessor.cpp(153,33): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  CalculatorPOO.vcxproj -> C:\Users\adi_p\Desktop\Facultate\Programrare orientata pe obiecte\Proiect POO\CalculatorPOO main\x64\Debug\CalculatorPOO.exe
+﻿  Calculator.cpp
+C:\Users\adi_p\Desktop\Calculator-POO\Operations.h(35,13): error C2653: 'Calculator': is not a class or namespace name
+C:\Users\adi_p\Desktop\Calculator-POO\Operations.h(35,25): error C3861: 'setValidInputFlag': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(40,45): error C2027: use of undefined type 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(9,7): message : see declaration of 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(40,1): error C3861: 'getMaxInputSize': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(46,41): error C2027: use of undefined type 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(9,7): message : see declaration of 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(46,1): error C3861: 'getMaxInputSize': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(52,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(85,35): error C2027: use of undefined type 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(9,7): message : see declaration of 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(85,1): error C3861: 'getMaxInputSize': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(86,35): error C2027: use of undefined type 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(9,7): message : see declaration of 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(86,1): error C3861: 'getMaxInputSize': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(87,35): error C2027: use of undefined type 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(9,7): message : see declaration of 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(87,1): error C3861: 'getMaxInputSize': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(102,42): error C2027: use of undefined type 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(9,7): message : see declaration of 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(102,1): error C3861: 'getMaxInputSize': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(103,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(153,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(159,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(16,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CalculatorPOO.cpp
+C:\Users\adi_p\Desktop\Calculator-POO\Operations.h(35,13): error C2653: 'Calculator': is not a class or namespace name
+C:\Users\adi_p\Desktop\Calculator-POO\Operations.h(35,25): error C3861: 'setValidInputFlag': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(40,45): error C2027: use of undefined type 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(9,7): message : see declaration of 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(40,1): error C3861: 'getMaxInputSize': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(46,41): error C2027: use of undefined type 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(9,7): message : see declaration of 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(46,1): error C3861: 'getMaxInputSize': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(52,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(85,35): error C2027: use of undefined type 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(9,7): message : see declaration of 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(85,1): error C3861: 'getMaxInputSize': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(86,35): error C2027: use of undefined type 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(9,7): message : see declaration of 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(86,1): error C3861: 'getMaxInputSize': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(87,35): error C2027: use of undefined type 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(9,7): message : see declaration of 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(87,1): error C3861: 'getMaxInputSize': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(102,42): error C2027: use of undefined type 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(9,7): message : see declaration of 'Calculator'
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(102,1): error C3861: 'getMaxInputSize': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(103,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(153,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(159,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(16,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CalculationProcessor.cpp
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(16,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(49,9): error C2065: 'CalculationProcessor': undeclared identifier
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(49,30): error C2146: syntax error: missing ';' before identifier 'op'
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(49,30): error C2065: 'op': undeclared identifier
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(59,13): error C2065: 'op': undeclared identifier
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(61,13): error C2065: 'op': undeclared identifier
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(63,13): error C2065: 'op': undeclared identifier
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(63,75): error C2065: 'op': undeclared identifier
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(68,9): error C2065: 'op': undeclared identifier
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(156,16): error C2653: 'CalculationProcessor': is not a class or namespace name
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(156,38): error C3861: 'getNumberPrecision': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(160,9): error C2653: 'CalculationProcessor': is not a class or namespace name
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(160,31): error C3861: 'setNumberPrecision': identifier not found
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(52,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(103,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(153,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(159,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...

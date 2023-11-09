@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void Test1() {
+void TestTastatura() {
     Calculator calc;
 
     cin >> calc;
@@ -16,15 +16,7 @@ void Test1() {
     }
 }
 
-/*
-4+3-2
-sir caractere: _+(_-_)
-vector numere: [4,3,2]
-
-4-3/4
-*/
-
-void Test2() {
+void TestPredefinit() {
     
     cout << "Exemple de teste din word: " << endl << endl;
     Calculator c1("[40 + (5 - 1)] * 2");
@@ -71,44 +63,50 @@ void Test2() {
     Calculator c14("(-1)^(-1)");
     cout << c14 << endl;
     cout << "Expected: -1" << endl;
+    Calculator c15("-5--1");
+    cout << c15 << endl;
+    cout << "Expected: -4" << endl;
     
 }
 
-void Test3() {
-
-    Calculator c1("3+ 2");
+void TestObiect() {
+    // Test constructor implicit
+    Calculator c1;
     cout << c1 << endl;
-    Calculator c2("8/2");
+    cout << "Expected: 0" << endl;
+    // Test constructor cu parametru
+    Calculator c2("2/7");
     cout << c2 << endl;
-    cout << (c1 == c2) << endl;
-    
-    Calculator c3("5+1");
-   
-    c3 += "1";
+    cout << "Expected: 0.28571" << endl;
+    // Test constructor copiere
+    Calculator c3(c2);
     cout << c3 << endl;
+    cout << "Expected: 0.28571" << endl;
+    // Test Operator Incrementare
+    Calculator c4("5");
+    c4 += "2";
+    cout << c4 << endl;
+    cout << "Expected: 7" << endl;
+    // Test operator egal
+    Calculator c5;
+    c5 = c2;
+    cout << c5 << endl;
+    cout << "Expected: 0.28571" << endl;
+  
 }
-
-/* TO DO:
-* more operation overrides
-* modify the precision of the result
-*/
 
 int main()
 {
-    Test1();
-    /*
-    Test2();
-    cout << "End of test 2 \n\n" << endl;
-    Calculator c;
-    c += "4 +  3";
-    c += "1";
-    cout << c << endl;
+   
+    TestObiect();
 
-    Calculator c;
-    c.setCalculationPrecision(1);
-    c += "3/7";
-    cout << c << endl;
-    */
     return 0;
 }
 
+/*
+Ways to read into the class:
+Constructors, requires memory
+readInput(),
++= operator,
+= operator
+*/
