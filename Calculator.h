@@ -35,7 +35,7 @@ private:
     }
 
     bool isInputValid(char* input) {
-        char validCharacters[] = { '1','2','3','4','5','6','7','8','9','0','(',')','[',']','-','+','*','/','#','^','.',' ','\0' };
+        char validCharacters[] = { '1','2','3','4','5','6','7','8','9','0','(',')','[',']','-','+','*','/','#','^','.','x','X','=',' ','\0'};
         for (int i = 0; i < strlen(input); i++)
             if (strchr(validCharacters, input[i]) == NULL)
                 return false;
@@ -46,11 +46,15 @@ private:
     void calculatePolinomial();
 
     bool isPolinomial(char* input) {
-        char polinomialSignature[] = { 'x','='};
+        char polinomialSignature[] = { 'x','=','\0'};
+        int count = 0;
         for (int i = 0; i < strlen(input); i++)
             if (strchr(polinomialSignature, input[i]) != NULL)
-                return true;
-        return false;
+                count++;
+        if (count >= 2)
+            return true;
+        else
+            return false;
     }
 
 public:
@@ -81,9 +85,9 @@ public:
             delete[] mainInput;
     }
 
-    friend ostream& operator<<(ostream& os, Calculator& obj) {
-        os << "Result: " << obj.mainInput;
-        return os;
+    friend ostream& operator<<(ostream& out, Calculator obj) {
+        out << "Result: "<< obj.mainInput;
+        return out;
     }
 
     friend istream& operator>>(istream& is, Calculator& obj) {

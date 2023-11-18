@@ -8,11 +8,10 @@ using namespace std;
 class CalculationProcessor {
 private:
    
-
     void calculateSingleOperation(const char operationSymbol, char* str, int& length) {
 
         Operations op;
-
+     
         for (int i = 0; i < length; i++) {
             if (operationSymbol == str[i]) {
 
@@ -25,21 +24,28 @@ private:
                 selectNumberToTheRight(str, rightNum, i, rightNumIndex);
 
                 // calculates the result of the operation between the right and left numbers of the symbol
-                double result = NULL;
+                double result;
+                bool resultFound = false;
                 switch (operationSymbol) {
-                case '#': result = op.root(charArrayToDouble(leftNum), charArrayToDouble(rightNum)); break;
-                case '^': result = op.power(charArrayToDouble(leftNum), charArrayToDouble(rightNum)); break;
-                case '*': result = op.multiplication(charArrayToDouble(leftNum), charArrayToDouble(rightNum)); break;
-                case '/': result = op.division(charArrayToDouble(leftNum), charArrayToDouble(rightNum)); break;
-                case '+': result = op.addition(charArrayToDouble(leftNum), charArrayToDouble(rightNum)); break;
+                case '#': result = op.root(charArrayToDouble(leftNum), charArrayToDouble(rightNum)); resultFound = true; break;
+                case '^': result = op.power(charArrayToDouble(leftNum), charArrayToDouble(rightNum)); resultFound = true; break;
+                case '*': result = op.multiplication(charArrayToDouble(leftNum), charArrayToDouble(rightNum)); resultFound = true; break;
+                case '/': result = op.division(charArrayToDouble(leftNum), charArrayToDouble(rightNum)); resultFound = true; break;
+                case '+': 
+                    if (i - 1 >= 0 && isThisCharPartOfNumber(str[i - 1])) {
+                        result = op.addition(charArrayToDouble(leftNum), charArrayToDouble(rightNum));
+                        resultFound = true;
+                    }
+                    break;
                 case '-':
-                    if (i - 1 >= 0 && isThisCharPartOfNumber(str[i - 1]) != NULL) {
+                    if (i - 1 >= 0 && isThisCharPartOfNumber(str[i - 1]) ) {
                         result = op.subtraction(charArrayToDouble(leftNum), charArrayToDouble(rightNum));
+                        resultFound = true;
                     }
                     break;
                 }
 
-                if (result == NULL)
+                if (!resultFound)
                     continue;
 
                 // replaces the numbers and symbol with the result
@@ -47,26 +53,16 @@ private:
                 i = 0;
                 length = strlen(str);
             }
+            solveMultipleSignProblems(str);
         }
     }
 
-    void selectNumberToTheRight(char* str, char* result, int pivot, int& rightIndex) {
-        rightIndex = strlen(str) - 1;
-
-        int resultLength = 0;
-        if (str[pivot + 1] == '-') {
-            result[resultLength++] = str[pivot + 1];
-            pivot++;
-        }
-        for (int i = pivot + 1; i < strlen(str); i++) {
-            if (isThisCharPartOfNumber(str[i]))
-                result[resultLength++] = str[i];
-            else {
-                rightIndex = i - 1;
-                break;
-            }
-        }
-        result[resultLength] = '\0';
+    void replateAtAndDeleteNext(char* str, int index, char replacement) {
+        int length = strlen(str);
+        str[index] = replacement;
+        for (int i = index + 1; i < length - 1; i++)
+            str[i] = str[i + 1];
+        str[length - 1] = '\0';
     }
 
     void selectNumberToTheLeft(char* str, char* result, int pivot, int& leftIndex) {
@@ -74,7 +70,7 @@ private:
 
         int resultLength = 0;
         for (int i = pivot - 1; i >= 0; i--) {
-            if (str[i] == '-' && (i == 0 || !isThisCharPartOfNumber(str[i - 1]))) {
+            if ((str[i] == '-'|| str[i] == '+') && (i == 0 || !isThisCharPartOfNumber(str[i - 1]))) {
                 result[resultLength++] = str[i];
                 continue;
             }
@@ -92,13 +88,9 @@ private:
             swap(result[i], result[resultLength - 1 - i]);
     }
 
-    bool isThisCharPartOfNumber(char c) {
-        return strchr("1234567890.", c) != NULL;
-    }
-
     
 public:
-     static int numberPrecision;
+    static int numberPrecision;
     void insideParenthesis(char* input, char* selection, int& lastOpenParenthesis, int& firstClosedParanthesis) {
 
         // get the position of the last open parenthesis
@@ -113,19 +105,18 @@ public:
                 break;
             }
 
+        
         // select everything inside the parenthesis
-        char* select = new char[Calculator::getMaxInputSize()]; int len = 0;
+        int j = 0;
         for (int i = lastOpenParenthesis + 1; i <= firstClosedParanthesis - 1; i++)
-            select[len++] = input[i];
-        select[len] = '\0';
-
-        // copies insides of the parenthesis into the 'selection' variable
-        strcpy_s(selection, Calculator::getMaxInputSize(), select);
-        delete[] select;
+            selection[j++] = input[i];
+        
+        selection[j] = '\0'; 
+        
     }
 
     void solveInOrder(char* str) {
-
+        solveMultipleSignProblems(str);
         int length = strlen(str);
         calculateSingleOperation('^', str, length);
         calculateSingleOperation('#', str, length);
@@ -134,7 +125,6 @@ public:
         calculateSingleOperation('+', str, length);
         calculateSingleOperation('-', str, length);
     }
-
 
     void replace(char* str, int start, int end, double replacement) {
 
@@ -164,9 +154,29 @@ public:
         strcat_s(str, Calculator::getMaxInputSize(), tail);
     }
 
+    void selectNumberToTheRight(char* str, char* result, int pivot, int& rightIndex) {
+        rightIndex = strlen(str) - 1;
+
+        int resultLength = 0;
+        if (str[pivot + 1] == '-' || str[pivot + 1] == '+') {
+            result[resultLength++] = str[pivot + 1];
+            pivot++;
+        }
+        for (int i = pivot + 1; i < strlen(str); i++) {
+            if (isThisCharPartOfNumber(str[i]))
+                result[resultLength++] = str[i];
+            else {
+                rightIndex = i - 1;
+                break;
+            }
+        }
+        result[resultLength] = '\0';
+    }
 
     double charArrayToDouble(char* charArray) {
-        return stod(charArray);
+        if (charArray != nullptr && strcmp(charArray,"")!=0)
+            return stod(charArray);
+        else return 0;
     }
 
     void doubleToCharArray(double doubleValue, char* charArray) {
@@ -190,4 +200,26 @@ public:
                 break;
         }
     }
+
+    bool isThisCharPartOfNumber(char c) {
+        return strchr("1234567890.", c) != NULL;
+    }
+
+    void solveMultipleSignProblems(char* str) {
+        for (int i = 0; i < strlen(str); i++) {
+            if (str[i] == '-') {
+                if (str[i + 1] == '-')
+                    replateAtAndDeleteNext(str, i, '+');
+                if (str[i + 1] == '+')
+                    replateAtAndDeleteNext(str, i, '-');
+            }
+            if (str[i] == '+') {
+                if (str[i + 1] == '-')
+                    replateAtAndDeleteNext(str, i, '-');
+                if (str[i + 1] == '+')
+                    replateAtAndDeleteNext(str, i, '+');
+            }
+        }
+    }
+
 };

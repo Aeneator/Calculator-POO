@@ -66,6 +66,16 @@ void TestPredefinit() {
     Calculator c15("-5--1");
     cout << c15 << endl;
     cout << "Expected: -4" << endl;
+    Calculator c16("-3+(-(-2))");
+    cout << c16 << endl;
+    cout << "Expected: -1" << endl;
+    Calculator c17("--4");
+    cout << c17 << endl;
+    cout << "Expected: 4" << endl;
+    Calculator c18("-(-(-(-2)))");
+    cout << c18 << endl;
+    cout << "Expected: 2" << endl;
+
     
 }
 
@@ -95,18 +105,24 @@ void TestObiect() {
   
 }
 
+void TestPolinomial() {
+    Calculator p("2*x = 5+2/4 + 2*x");
+    cout << p << endl;
+}
+
+//Bugs:
+//
+
+
 int main()
 {
-   
-    TestObiect();
+    //TestTastatura();
+    //TestPredefinit();
+    TestPolinomial();
+    
+    //Calculator c("-5+5");
+    //cout << c << endl;
+    
 
     return 0;
 }
-
-/*
-Ways to read into the class:
-Constructors, requires memory
-readInput(),
-+= operator,
-= operator
-*/
