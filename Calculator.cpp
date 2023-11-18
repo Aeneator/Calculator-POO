@@ -5,10 +5,6 @@
 bool Calculator::validInputFlag = true;
 
 void Calculator::calculate() {
-    if (!getValidInputFlag()) {
-        strcpy_s(getMainInput(), getMaxInputSize(), "Input is not valid.");
-        return;
-    }
 
     CalculationProcessor calcProcessor;
 
@@ -30,13 +26,12 @@ void Calculator::calculate() {
     }
     // solve what the remaining operations after there are no parenthesis
     calcProcessor.solveInOrder(getMainInput());
+
+    addNewOutputHistoryEntry(calcProcessor.charArrayToDouble(mainInput));
 }
 
 void Calculator::calculatePolinomial() {
-    if (!getValidInputFlag()) {
-        strcpy_s(getMainInput(), getMaxInputSize(), "Input is not valid.");
-        return;
-    }
+  
     cout << "This is a polinomial" << endl;
     Polinomials polinom;
     

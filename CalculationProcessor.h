@@ -173,7 +173,7 @@ public:
         result[resultLength] = '\0';
     }
 
-    double charArrayToDouble(char* charArray) {
+    float charArrayToDouble(char* charArray) {
         if (charArray != nullptr && strcmp(charArray,"")!=0)
             return stod(charArray);
         else return 0;
