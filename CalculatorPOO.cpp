@@ -14,6 +14,7 @@ void TestTastatura() {
 
         cin >> calc;
     }
+    calc.displayHistory();
 }
 
 void TestPredefinit() {
@@ -116,7 +117,7 @@ void TestPolinomial() {
 
 int main()
 {
-    //TestTastatura();
+    TestTastatura();
     //TestPredefinit();
     //TestPolinomial();
     //TestObiect();
@@ -124,17 +125,20 @@ int main()
     //Calculator c("-5+5");
     //cout << c << endl;
     
-    
+    /*
     Calculator c7;
    
     c7.readInput("2+3");
     cout << c7 << endl;
     c7.readInput("2+32 - -2");
     cout << c7 << endl;
-    c7.displayInputHistory();
-    
+    c7.displayHistory();
+    */
 
 
 
     return 0;
 }
+
+
+// 2 + -2

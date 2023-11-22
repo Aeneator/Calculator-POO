@@ -306,7 +306,7 @@ public:
         validInputFlag = value;
     }
 
-    void displayInputHistory() {
+    void displayHistory() {
         for (int i = 0; i < inputHistoryEntries; i++) {
             cout << "Input[" << i << "]: " << inputHistory[i]<< " = " << outputHistory[i] << endl;
         }
