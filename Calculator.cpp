@@ -20,14 +20,32 @@ void Calculator::calculate() {
         // solves the string inside the parenthesis
         calcProcessor.solveInOrder(result);
         // replaces the parenthesis with the solution
-        calcProcessor.replace(getMainInput(), firstParenthesis, lastParenthesis, calcProcessor.charArrayToDouble(result));
+        calcProcessor.replace(getMainInput(), firstParenthesis, lastParenthesis, Helper::charArrayToDouble(result),calcProcessor.numberPrecision);
         // check if the input has parenthesis
         parenthesisFound = (strchr(getMainInput(), '(') != NULL || strchr(getMainInput(), ')') != NULL || strchr(getMainInput(), '[') != NULL || strchr(getMainInput(), ']') != NULL);
     }
     // solve what the remaining operations after there are no parenthesis
     calcProcessor.solveInOrder(getMainInput());
 
-    addNewOutputHistoryEntry(calcProcessor.charArrayToDouble(mainInput));
+    addNewOutputHistoryEntry(Helper::charArrayToDouble(mainInput));
+}
+
+void Calculator::displayHistory() {
+
+    CalculationProcessor calcProcessor;
+    
+    for (int i = 0; i < inputHistoryEntries; i++) {
+        cout << "Input[" << i << "]: " << inputHistory[i] << " = ";
+        if (outputHistory[i] != 0) {
+            char* temp = new char[maxInputSize];
+            Helper::doubleToCharArray(outputHistory[i], temp, calcProcessor.numberPrecision);
+            cout << temp << endl;
+            delete[] temp;
+        }
+        else {
+            cout << 0 << endl;
+        }
+    }
 }
 
 void Calculator::calculatePolinomial() {

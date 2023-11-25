@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Calculator.h"
+#include <string>
 
 using namespace std;
 
@@ -110,35 +111,40 @@ void TestPolinomial() {
     Calculator p("2*x = 5+2/4 + 2*x");
     cout << p << endl;
 }
+int countDigits(double num) {
+    // Convert the double to a string
+    string numStr = to_string(fabs(num)); // Use fabs to handle negative numbers
 
-//Bugs:
-//
+    // Count the digits in the string
+    int digitCount = numStr.size();
 
+    return digitCount;
+}
 
 int main()
 {
-    TestTastatura();
+    //TestTastatura();
     //TestPredefinit();
     //TestPolinomial();
-    //TestObiect();
+    TestObiect();
     
     //Calculator c("-5+5");
     //cout << c << endl;
     
-    /*
-    Calculator c7;
+
+   /* Calculator c7;
    
-    c7.readInput("2+3");
-    cout << c7 << endl;
-    c7.readInput("2+32 - -2");
-    cout << c7 << endl;
-    c7.displayHistory();
-    */
+    c7.readInput("10-10/0");
+    c7 += "12";
+    c7.readInput("20+3");
+   
+   
+   
+    c7.displayHistory();*/
 
-
+    
+    //cout << countDigits(-123.2);
+ 
 
     return 0;
 }
-
-
-// 2 + -2

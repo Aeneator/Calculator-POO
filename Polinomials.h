@@ -19,7 +19,7 @@ public:
 			// solves the string inside the parenthesis
 			// calcProcessor.solveInOrder(result);
 			// replaces the parenthesis with the solution
-			calcProcessor.replace(input, firstParenthesis, lastParenthesis, calcProcessor.charArrayToDouble(result));
+			calcProcessor.replace(input, firstParenthesis, lastParenthesis, Helper::charArrayToDouble(result), calcProcessor.numberPrecision);
 			// check if the input has parenthesis
 			parenthesisFound = (strchr(input, '(') != NULL || strchr(input, ')') != NULL || strchr(input, '[') != NULL || strchr(input, ']') != NULL);
 		}
@@ -62,19 +62,19 @@ public:
 				double result;
 				bool resultFound = false;
 				switch (operationSymbol) {
-				case '#': result = op.root(calcProcessor.charArrayToDouble(leftNum), calcProcessor.charArrayToDouble(rightNum)); resultFound = true; break;
-				case '^': result = op.power(calcProcessor.charArrayToDouble(leftNum), calcProcessor.charArrayToDouble(rightNum)); resultFound = true; break;
-				case '*': result = op.multiplication(calcProcessor.charArrayToDouble(leftNum), calcProcessor.charArrayToDouble(rightNum)); resultFound = true; break;
-				case '/': result = op.division(calcProcessor.charArrayToDouble(leftNum), calcProcessor.charArrayToDouble(rightNum)); resultFound = true; break;
+				case '#': result = op.root(Helper::charArrayToDouble(leftNum), Helper::charArrayToDouble(rightNum)); resultFound = true; break;
+				case '^': result = op.power(Helper::charArrayToDouble(leftNum), Helper::charArrayToDouble(rightNum)); resultFound = true; break;
+				case '*': result = op.multiplication(Helper::charArrayToDouble(leftNum), Helper::charArrayToDouble(rightNum)); resultFound = true; break;
+				case '/': result = op.division(Helper::charArrayToDouble(leftNum), Helper::charArrayToDouble(rightNum)); resultFound = true; break;
 				case '+':
-					if (i - 1 >= 0 && calcProcessor.isThisCharPartOfNumber(str[i - 1])) {
-						result = op.addition(calcProcessor.charArrayToDouble(leftNum), calcProcessor.charArrayToDouble(rightNum));
+					if (i - 1 >= 0 && Helper::isThisCharPartOfNumber(str[i - 1])) {
+						result = op.addition(Helper::charArrayToDouble(leftNum), Helper::charArrayToDouble(rightNum));
 						resultFound = true;
 					}
 					break;
 				case '-':
-					if (i - 1 >= 0 && calcProcessor.isThisCharPartOfNumber(str[i - 1])) {
-						result = op.subtraction(calcProcessor.charArrayToDouble(leftNum), calcProcessor.charArrayToDouble(rightNum));
+					if (i - 1 >= 0 && Helper::isThisCharPartOfNumber(str[i - 1])) {
+						result = op.subtraction(Helper::charArrayToDouble(leftNum), Helper::charArrayToDouble(rightNum));
 						resultFound = true;
 					}
 					break;
@@ -84,7 +84,7 @@ public:
 					continue;
 
 				// replaces the numbers and symbol with the result
-				calcProcessor.replace(str, leftNumIndex, rightNumIndex, result);
+				calcProcessor.replace(str, leftNumIndex, rightNumIndex, result, calcProcessor.numberPrecision);
 				i = 0;
 				length = strlen(str);
 			}
@@ -96,7 +96,7 @@ public:
 		int posOfX = -1;
 		if (checkToTheLeft) {
 			for (int i = pivot - 1; i >= 0; i--) {
-				if (!calcProcessor.isThisCharPartOfNumber(str[i])) {
+				if (!Helper::isThisCharPartOfNumber(str[i])) {
 					if (str[i] == 'x') {
 						posOfX = i;
 						break;
@@ -148,7 +148,7 @@ public:
 					calcProcessor.selectNumberToTheRight(str, selectedGroup, i, groupIndex);
 					cout << "|" << selectedGroup << endl;
 					invertGroup(selectedGroup);
-					calcProcessor.replace(str, i + 1, groupIndex,calcProcessor.charArrayToDouble(selectedGroup));
+					calcProcessor.replace(str, i + 1, groupIndex,Helper::charArrayToDouble(selectedGroup));
 					cout << "|" << selectedGroup << endl;
 				}
 			}

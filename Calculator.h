@@ -32,9 +32,7 @@ private:
             return;
         Calculator::setValidInputFlag(isInputValid(mainInput));
         
-
         if (!getValidInputFlag()) {
-            strcpy_s(mainInput, getMaxInputSize(), "Input is not valid.");
             return;
         }
 
@@ -84,6 +82,8 @@ private:
     }
 
     void addNewOutputHistoryEntry(double newOutput) {
+        if (!Calculator::getValidInputFlag())
+            newOutput = 0;
         if (outputHistory == nullptr || outputHistoryLength <= 0) {
             outputHistoryLength = 1;
             outputHistory = new double[1];
@@ -108,7 +108,6 @@ private:
             outputHistory[outputHistoryLength - 1] = newOutput;
 
             delete[] outputCopies;
-
         }
     }
 
@@ -140,7 +139,7 @@ public:
     Calculator() {
         validInputFlag = true;
         mainInput = new char[maxInputSize];
-        strcpy_s(mainInput, getMaxInputSize(), "0");
+        strcpy_s(mainInput, 2, "0");
 
         inputHistory = nullptr;
         outputHistory = nullptr;
@@ -159,8 +158,8 @@ public:
 
     Calculator(Calculator& obj) {
        if (obj.getMainInput() != nullptr) {
-           mainInput = new char[getMaxInputSize()];
-           strcpy_s(mainInput, getMaxInputSize(), obj.mainInput);
+           mainInput = new char[maxInputSize];
+           strcpy_s(mainInput, maxInputSize, obj.mainInput);
        }
        else {
            mainInput = nullptr;
@@ -213,12 +212,21 @@ public:
     }
 
     friend ostream& operator<<(ostream& out, Calculator obj) {
-        out << "Result: "<< obj.mainInput;
+        if (Calculator::getValidInputFlag()) {
+            if (strcmp(obj.mainInput, "0") != 0)
+                out << "Result: " << obj.mainInput;
+            else
+                out << "Result: 0";
+        }
+        else {
+            strcpy_s(obj.mainInput, obj.maxInputSize, "Input was not valid.");
+            out << obj.mainInput;
+        }
         return out;
     }
 
     friend istream& operator>>(istream& is, Calculator& obj) {
-        is.getline(obj.mainInput, obj.getMaxInputSize());
+        is.getline(obj.mainInput, obj.maxInputSize);
         obj.processNewInput();
         return is;
     }
@@ -234,8 +242,9 @@ public:
             }
             if (obj.inputHistory != nullptr) {
                 if (inputHistory != nullptr) {
-                    for (int i = 0; i < inputHistoryEntries; i++)
+                    for (int i = 0; i < inputHistoryEntries; i++) {
                         delete[] inputHistory[i];
+                    }
                     delete[] inputHistory;
                 }
 
@@ -260,10 +269,12 @@ public:
 
     // Operator overloading for += (char[])
     Calculator& operator+=(const char* str) {
-        strcat_s(mainInput, getMaxInputSize(), "+(");
-        strcat_s(mainInput, getMaxInputSize(), str);
-        strcat_s(mainInput, getMaxInputSize(), ")");
-        processNewInput();
+        if (getValidInputFlag()) {
+            strcat_s(mainInput, maxInputSize, "+(");
+            strcat_s(mainInput, maxInputSize, str);
+            strcat_s(mainInput, maxInputSize, ")");
+            processNewInput();
+        }
         return *this;
     }
 
@@ -281,7 +292,7 @@ public:
             delete[] mainInput;
         mainInput = new char[maxInputSize];
         
-        cin.getline(mainInput, Calculator::getMaxInputSize());
+        cin.getline(mainInput, maxInputSize);
         processNewInput();
     }
 
@@ -291,6 +302,7 @@ public:
         mainInput = new char[maxInputSize];
 
         strcpy_s(mainInput, strlen(input) + 1, input);
+
         processNewInput();
     }
 
@@ -306,10 +318,6 @@ public:
         validInputFlag = value;
     }
 
-    void displayHistory() {
-        for (int i = 0; i < inputHistoryEntries; i++) {
-            cout << "Input[" << i << "]: " << inputHistory[i]<< " = " << outputHistory[i] << endl;
-        }
-    }
+    void displayHistory();
 
 };

@@ -1,5 +1,5 @@
 ﻿  CalculatorPOO.cpp
 C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(96,50): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(117,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(129,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(116,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(128,27): warning C4018: '<': signed/unsigned mismatch
   CalculatorPOO.vcxproj -> C:\Users\adi_p\Desktop\Calculator-POO\Debug\CalculatorPOO.exe

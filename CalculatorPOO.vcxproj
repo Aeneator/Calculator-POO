@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Calculator.h" />
+    <ClInclude Include="Helper.h" />
     <ClInclude Include="Operations.h" />
     <ClInclude Include="CalculationProcessor.h" />
     <ClInclude Include="Polinomials.h" />
