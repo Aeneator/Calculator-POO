@@ -10,6 +10,7 @@ using namespace std;
 class CalculationProcessor {
     friend class Polinomials;
 private:
+    int numberPrecision = 4;
     void calculateSingleOperation(const char operationSymbol, char* str) {
 
         Operations op;
@@ -132,7 +133,34 @@ private:
     }
 
 public:
-    int numberPrecision = 4;
+    CalculationProcessor() {
+        setNumberPrecision(4);
+    }
+    CalculationProcessor(int _numberPrecision) {
+        setNumberPrecision(_numberPrecision);
+    }
+
+    friend istream& operator>>(istream& in, CalculationProcessor& obj) {
+        in >> obj.numberPrecision;
+        return in;
+    }
+
+    friend ostream& operator<<(ostream& out, CalculationProcessor obj) {
+        out << obj.numberPrecision;
+        return out;
+    }
+
+    bool operator!() {
+        return numberPrecision <= 0;
+    }
+
+    int getNumberPrecision() {
+        return numberPrecision;
+    }
+
+    void setNumberPrecision(int value) {
+        numberPrecision = value;
+    }
 
     void insideParenthesis(char* input, char* selection, int& lastOpenParenthesis, int& firstClosedParanthesis) {
 

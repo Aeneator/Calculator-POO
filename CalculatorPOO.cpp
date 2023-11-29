@@ -123,10 +123,10 @@ int countDigits(double num) {
 
 int main()
 {
-    //TestTastatura();
+    TestTastatura();
     //TestPredefinit();
     //TestPolinomial();
-    TestObiect();
+    //TestObiect();
     
     //Calculator c("-5+5");
     //cout << c << endl;

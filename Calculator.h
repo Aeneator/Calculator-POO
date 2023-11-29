@@ -225,10 +225,10 @@ public:
         return out;
     }
 
-    friend istream& operator>>(istream& is, Calculator& obj) {
-        is.getline(obj.mainInput, obj.maxInputSize);
+    friend istream& operator>>(istream& in, Calculator& obj) {
+        in.getline(obj.mainInput, obj.maxInputSize);
         obj.processNewInput();
-        return is;
+        return in;
     }
 
     Calculator& operator=(const Calculator& obj) {

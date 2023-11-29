@@ -20,7 +20,7 @@ void Calculator::calculate() {
         // solves the string inside the parenthesis
         calcProcessor.solveInOrder(result);
         // replaces the parenthesis with the solution
-        calcProcessor.replace(getMainInput(), firstParenthesis, lastParenthesis, Helper::charArrayToDouble(result),calcProcessor.numberPrecision);
+        calcProcessor.replace(getMainInput(), firstParenthesis, lastParenthesis, Helper::charArrayToDouble(result),calcProcessor.getNumberPrecision());
         // check if the input has parenthesis
         parenthesisFound = (strchr(getMainInput(), '(') != NULL || strchr(getMainInput(), ')') != NULL || strchr(getMainInput(), '[') != NULL || strchr(getMainInput(), ']') != NULL);
     }
@@ -38,7 +38,7 @@ void Calculator::displayHistory() {
         cout << "Input[" << i << "]: " << inputHistory[i] << " = ";
         if (outputHistory[i] != 0) {
             char* temp = new char[maxInputSize];
-            Helper::doubleToCharArray(outputHistory[i], temp, calcProcessor.numberPrecision);
+            Helper::doubleToCharArray(outputHistory[i], temp, calcProcessor.getNumberPrecision());
             cout << temp << endl;
             delete[] temp;
         }
