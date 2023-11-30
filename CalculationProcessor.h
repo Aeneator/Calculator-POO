@@ -154,6 +154,24 @@ public:
     bool operator!() {
         return numberPrecision <= 0;
     }
+    bool operator>(CalculationProcessor& obj) {
+        return numberPrecision > obj.numberPrecision;
+    }
+    bool operator>=(CalculationProcessor& obj) {
+        return numberPrecision >= obj.numberPrecision;
+    }
+    bool operator<(CalculationProcessor& obj) {
+        return numberPrecision < obj.numberPrecision;
+    }
+    bool operator<=(CalculationProcessor& obj) {
+        return numberPrecision <= obj.numberPrecision;
+    }
+    bool operator==(CalculationProcessor& obj) {
+        return numberPrecision == obj.numberPrecision;
+    }
+    bool operator!=(CalculationProcessor & obj) {
+        return numberPrecision == obj.numberPrecision;
+    }
 
     int getNumberPrecision() {
         return numberPrecision;

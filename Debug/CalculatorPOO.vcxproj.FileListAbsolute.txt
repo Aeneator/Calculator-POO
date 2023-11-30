@@ -1,1 +1,2 @@
 C:\Users\adi_p\Desktop\Calculator-POO\Debug\CalculatorPOO.exe
+C:\Users\Emil\Desktop\Calculator-POO\Debug\CalculatorPOO.exe

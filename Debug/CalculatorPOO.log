@@ -1,25 +1,23 @@
 ﻿  CalculationProcessor.cpp
-C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(93,50): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(113,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(18,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(99,35): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(111,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(169,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(174,45): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(214,33): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(219,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\Calculator.h(93,50): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Emil\Desktop\Calculator-POO\Calculator.h(113,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(18,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(99,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(111,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(169,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(174,45): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(214,33): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(219,27): warning C4018: '<': signed/unsigned mismatch
   Calculator.cpp
-C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(93,50): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(113,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(18,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(99,35): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(111,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(169,27): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(174,45): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(214,33): warning C4018: '<': signed/unsigned mismatch
-C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(219,27): warning C4018: '<': signed/unsigned mismatch
-  CalculatorPOO.cpp
-C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(93,50): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(113,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\Calculator.h(93,50): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Emil\Desktop\Calculator-POO\Calculator.h(113,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(18,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(99,35): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(111,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(169,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(174,45): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(214,33): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(219,27): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
-  CalculatorPOO.vcxproj -> C:\Users\adi_p\Desktop\Calculator-POO\Debug\CalculatorPOO.exe
+  LINK : C:\Users\Emil\Desktop\Calculator-POO\Debug\CalculatorPOO.exe not found or not built by the last incremental link; performing full link
+  CalculatorPOO.vcxproj -> C:\Users\Emil\Desktop\Calculator-POO\Debug\CalculatorPOO.exe

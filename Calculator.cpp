@@ -27,6 +27,7 @@ void Calculator::calculate() {
     calcProcessor.solveInOrder(getMainInput());
 
     addNewOutputHistoryEntry(Helper::charArrayToDouble(mainInput));
+
 }
 
 void Calculator::displayHistory() {
@@ -35,14 +36,11 @@ void Calculator::displayHistory() {
     
     for (int i = 0; i < inputHistoryEntries; i++) {
         cout << "Input[" << i << "]: " << inputHistory[i] << " = ";
-        if (outputHistory[i] != 0) {
-            char* temp = new char[maxInputSize];
-            Helper::doubleToCharArray(outputHistory[i], temp, calcProcessor.getNumberPrecision());
-            cout << temp << endl;
-            delete[] temp;
-        }
-        else {
-            cout << 0 << endl;
-        }
+       
+        char* temp = new char[maxInputSize];
+        Helper::doubleToCharArray(outputHistory[i], temp, calcProcessor.getNumberPrecision());
+        cout << temp << endl;
+        delete[] temp;
+    
     }
 }

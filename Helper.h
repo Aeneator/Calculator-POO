@@ -22,10 +22,12 @@ public:
 
         if (strchr(charArray, '.') != NULL) {
             int i = strlen(charArray) - 1;
-            while (strchr("0.", charArray[i]) != NULL) {
+            while ( charArray[i] == '0') {
                 charArray[i] = '\0';
                 i--;
             }
+            if (charArray[i] == '.')
+                charArray[i] = '\0';
         }
     }
 };
