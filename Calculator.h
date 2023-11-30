@@ -40,11 +40,8 @@ private:
 
         // add the input to history
         addNewInputHistoryEntry(mainInput);
-
-        if (isPolinomial(mainInput))
-            calculatePolinomial();
-        else
-            calculate();
+   
+        calculate();
     }
 
     void addNewInputHistoryEntry(char* newInput) {
@@ -120,19 +117,6 @@ private:
         return true;
     }
     void calculate();
-    void calculatePolinomial();
-
-    bool isPolinomial(char* input) {
-        char polinomialSignature[] = { 'x','=','\0'};
-        int count = 0;
-        for (int i = 0; i < strlen(input); i++)
-            if (strchr(polinomialSignature, input[i]) != NULL)
-                count++;
-        if (count >= 2)
-            return true;
-        else
-            return false;
-    }
 
 public:
 
@@ -213,10 +197,7 @@ public:
 
     friend ostream& operator<<(ostream& out, Calculator obj) {
         if (Calculator::getValidInputFlag()) {
-            if (strcmp(obj.mainInput, "0") != 0)
-                out << "Result: " << obj.mainInput;
-            else
-                out << "Result: 0";
+            cout << "Result: " << obj.mainInput;
         }
         else {
             strcpy_s(obj.mainInput, obj.maxInputSize, "Input was not valid.");

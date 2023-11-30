@@ -1,6 +1,28 @@
 #pragma once
 #include "CalculationProcessor.h"
 
+/*
+void Calculator::calculatePolinomial() {
+
+	cout << "This is a polinomial" << endl;
+	Polinomials polinom;
+
+	int foundEqual = -1;
+
+	for (int i = 0; i < strlen(getMainInput()); i++)
+		if (getMainInput()[i] == '=')
+			foundEqual = i;
+
+	char partAfterPlus[100]; partAfterPlus[0] = '\0';
+	strcpy_s(partAfterPlus, 100, getMainInput()+foundEqual+1);
+	cout <<"Before simplify: " << partAfterPlus << endl;
+	polinom.simplify(partAfterPlus);
+	cout <<"After Simplify:  "<< partAfterPlus << endl;
+	//polinom.moveFromRightToLeft(getMainInput());
+
+	//polinom.solveWithX(getMainInput());
+}
+*/
 class Polinomials {
 private:
 	CalculationProcessor calcProcessor;

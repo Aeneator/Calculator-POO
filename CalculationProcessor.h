@@ -139,6 +139,7 @@ public:
     CalculationProcessor(int _numberPrecision) {
         setNumberPrecision(_numberPrecision);
     }
+    ~CalculationProcessor(){}
 
     friend istream& operator>>(istream& in, CalculationProcessor& obj) {
         in >> obj.numberPrecision;

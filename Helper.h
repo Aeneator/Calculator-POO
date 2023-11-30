@@ -20,10 +20,12 @@ public:
 
         sprintf_s(charArray, Calculator::getMaxInputSize(), precision, doubleValue);
 
-        int i = strlen(charArray) - 1;
-        while (strchr("0.", charArray[i]) != NULL) {
-            charArray[i] = '\0';
-            i--;
+        if (strchr(charArray, '.') != NULL) {
+            int i = strlen(charArray) - 1;
+            while (strchr("0.", charArray[i]) != NULL) {
+                charArray[i] = '\0';
+                i--;
+            }
         }
     }
 };
