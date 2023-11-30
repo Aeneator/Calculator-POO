@@ -109,13 +109,14 @@ private:
     }
 
     bool isInputValid(char* input) {
-        char validCharacters[] = { '1','2','3','4','5','6','7','8','9','0','(',')','[',']','-','+','*','/','#','^','.','x','X','=',' ','\0'};
+        char validCharacters[] = { '1','2','3','4','5','6','7','8','9','0','(',')','[',']','-','+','*','/','#','^','.',' ','\0'};
         for (int i = 0; i < strlen(input); i++)
             if (strchr(validCharacters, input[i]) == NULL)
                 return false;
 
         return true;
     }
+
     void calculate();
 
 public:
