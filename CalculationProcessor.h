@@ -8,7 +8,6 @@
 using namespace std;
 
 class CalculationProcessor {
-    friend class Polinomials;
 private:
     int numberPrecision = 4;
     void calculateSingleOperation(const char operationSymbol, char* str) {

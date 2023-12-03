@@ -26,6 +26,13 @@ void Calculator::calculate() {
     // solve what the remaining operations after there are no parenthesis
     calcProcessor.solveInOrder(getMainInput());
 
+    if (mainInput[0] == '+') {
+        for (int i = 0; i < strlen(mainInput) - 1; i++) {
+            mainInput[i] = mainInput[i + 1];
+        }
+        mainInput[strlen(mainInput) - 1] = '\0';
+    }
+
     addNewOutputHistoryEntry(Helper::charArrayToDouble(mainInput));
 
 }
@@ -33,6 +40,8 @@ void Calculator::calculate() {
 void Calculator::displayHistory() {
 
     CalculationProcessor calcProcessor;
+
+    cout << "Calculator History: " << endl;
     
     for (int i = 0; i < inputHistoryEntries; i++) {
         cout << "Input[" << i << "]: " << inputHistory[i] << " = ";
