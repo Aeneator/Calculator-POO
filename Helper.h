@@ -16,7 +16,7 @@ public:
 
     static void doubleToCharArray(double doubleValue, char* charArray, int numberPrecision) {
         char precision[20];
-        sprintf_s(precision, sizeof(precision), "%%.%dlf", numberPrecision);
+        sprintf_s(precision, sizeof(precision), "%%.%dlf",10);
 
         sprintf_s(charArray, Calculator::getMaxInputSize(), precision, doubleValue);
 

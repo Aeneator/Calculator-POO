@@ -207,8 +207,8 @@ public:
 
         calculateSingleOperation('^', str);
         calculateSingleOperation('#', str);
-        calculateSingleOperation('*', str);
         calculateSingleOperation('/', str);
+        calculateSingleOperation('*', str);
         calculateSingleOperation('+', str);
         calculateSingleOperation('-', str);
     }
