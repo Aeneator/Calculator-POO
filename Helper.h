@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Helper {
@@ -29,5 +30,14 @@ public:
             if (charArray[i] == '.')
                 charArray[i] = '\0';
         }
+    }
+
+    static char* charsubstr(char* arr, int begin, int len)
+    {
+        char* res = new char[len + 1];
+        for (int i = 0; i < len; i++)
+            res[i] = *(arr + begin + i);
+        res[len] = 0;
+        return res;
     }
 };

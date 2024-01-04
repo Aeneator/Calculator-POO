@@ -1,16 +1,22 @@
 #pragma once
 #include <iostream>
-
+#include <string>
+#include <fstream>
+#include <windows.h>
+#include "Menu.h"
 using namespace std;
 
 class Calculator {
-private:
+protected:
+    CalculatorMenu menu;
+
     char* mainInput;
     static const int maxInputSize = 100;
     static bool validInputFlag;
+    int commandID;
 
     char** inputHistory;
-    int inputHistoryEntries = 0;
+    int inputHistoryEntries;
     double* outputHistory;
     int outputHistoryLength;
 
@@ -27,21 +33,21 @@ private:
         input[inputLength] = '\0';
     }
 
-    void processNewInput() {
-        if (strcmp(mainInput, "exit") == 0)
-            return;
+    virtual void processNewInput() {
+
+        trimInput(mainInput);
+
         Calculator::setValidInputFlag(isInputValid(mainInput));
         
         if (!getValidInputFlag()) {
             return;
         }
 
-        trimInput(mainInput);
-
         // add the input to history
         addNewInputHistoryEntry(mainInput);
    
         calculate();
+
     }
 
     void addNewInputHistoryEntry(char* newInput) {
@@ -87,7 +93,7 @@ private:
             outputHistory[0] = newOutput;
         }
         else {
-            float* outputCopies = new float[outputHistoryLength];
+            double* outputCopies = new double[outputHistoryLength];
 
             for (int i = 0; i < outputHistoryLength; i++)
                 outputCopies[i] = outputHistory[i];
@@ -119,10 +125,13 @@ private:
 
     void calculate();
 
+   
+
 public:
 
     Calculator() {
         validInputFlag = true;
+        commandID = 0;
         mainInput = new char[maxInputSize];
         strcpy_s(mainInput, 2, "0");
 
@@ -142,36 +151,39 @@ public:
     }
 
     Calculator(Calculator& obj) {
-       if (obj.getMainInput() != nullptr) {
-           mainInput = new char[maxInputSize];
-           strcpy_s(mainInput, maxInputSize, obj.mainInput);
-       }
-       else {
-           mainInput = nullptr;
-       }
-       if (obj.inputHistory != nullptr && obj.inputHistoryEntries > 0) {
-           inputHistoryEntries = obj.inputHistoryEntries;
-           inputHistory = new char* [obj.inputHistoryEntries];
-           for (int i = 0; i < obj.inputHistoryEntries; i++) {
-               inputHistory[i] = new char[strlen(obj.inputHistory[i]) + 1];
-               strcpy_s(inputHistory[i], strlen(obj.inputHistory[i]) + 1, obj.inputHistory[i]);
-           }
-       }
-       else {
-           inputHistoryEntries = 0;
-           inputHistory = nullptr;
-       }
-       if (obj.outputHistory != nullptr) {
-           outputHistoryLength = obj.outputHistoryLength;
-           outputHistory = new double[obj.outputHistoryLength];
-           for (int i = 0; i < obj.outputHistoryLength; i++) {
-               outputHistory[i] = obj.outputHistory[i];
-           }
-       }
-       else {
-           outputHistoryLength = 0;
-           outputHistory = nullptr;
-       }
+        commandID = obj.commandID;
+        if (obj.getMainInput() != nullptr) {
+            mainInput = new char[maxInputSize];
+            strcpy_s(mainInput, maxInputSize, obj.mainInput);
+        }
+        else {
+            mainInput = nullptr;
+        }
+       
+        if (obj.inputHistory != nullptr && obj.inputHistoryEntries > 0) {
+            inputHistoryEntries = obj.inputHistoryEntries;
+            inputHistory = new char* [obj.inputHistoryEntries];
+            for (int i = 0; i < obj.inputHistoryEntries; i++) {
+                inputHistory[i] = new char[strlen(obj.inputHistory[i]) + 1];
+                strcpy_s(inputHistory[i], strlen(obj.inputHistory[i]) + 1, obj.inputHistory[i]);
+            }
+        }
+        else {
+            inputHistoryEntries = 0;
+            inputHistory = nullptr;
+        }
+       
+        if (obj.outputHistory != nullptr) {
+            outputHistoryLength = obj.outputHistoryLength;
+            outputHistory = new double[obj.outputHistoryLength];
+            for (int i = 0; i < obj.outputHistoryLength; i++) {
+                outputHistory[i] = obj.outputHistory[i];
+            }
+        }
+        else {
+            outputHistoryLength = 0;
+            outputHistory = nullptr;
+        } 
     }
     
     ~Calculator() {
@@ -198,11 +210,12 @@ public:
 
     friend ostream& operator<<(ostream& out, Calculator obj) {
         if (Calculator::getValidInputFlag()) {
-            cout << "Result: " << obj.mainInput;
+            if (obj.commandID == 0)
+                cout << "Result: " << obj.mainInput << endl;
         }
         else {
             strcpy_s(obj.mainInput, obj.maxInputSize, "Input was not valid.");
-            out << obj.mainInput;
+            out << obj.mainInput << endl;
         }
         return out;
     }
@@ -231,7 +244,8 @@ public:
                 }
 
                 inputHistory = new char* [obj.inputHistoryEntries];
-                for (int i = 0; i < inputHistoryEntries; i++) {
+                inputHistoryEntries = obj.inputHistoryEntries;
+                for (int i = 0; i < obj.inputHistoryEntries; i++) {
                     inputHistory[i] = new char[strlen(obj.inputHistory[i]) + 1];
                     strcpy_s(inputHistory[i], strlen(obj.inputHistory[i]) + 1, obj.inputHistory[i]);
                 }
@@ -241,6 +255,7 @@ public:
                     delete[] outputHistory;
                 
                 outputHistory = new double[obj.outputHistoryLength];
+                outputHistoryLength = obj.outputHistoryLength;
                 for (int i = 0; i < obj.outputHistoryLength; i++) {
                     outputHistory[i] = obj.outputHistory[i];
                 }
@@ -288,6 +303,18 @@ public:
         processNewInput();
     }
 
+    /*
+    void showResult() {
+        if (getValidInputFlag()) {
+            if (commandID == 0)
+                cout << "Result: " << mainInput << endl;
+        }
+        else {
+            strcpy_s(mainInput, maxInputSize, "Input was not valid.");
+            cout << mainInput << endl;
+        }
+    }*/
+
     static const int getMaxInputSize() {
         return maxInputSize;
     }
@@ -301,5 +328,4 @@ public:
     }
 
     void displayHistory();
-
 };

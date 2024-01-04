@@ -1,4 +1,0 @@
-﻿  CalculatorPOO.cpp
-C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(93,50): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(113,27): warning C4018: '<': signed/unsigned mismatch
-  CalculatorPOO.vcxproj -> C:\Users\adi_p\Desktop\Calculator-POO\Debug\CalculatorPOO.exe

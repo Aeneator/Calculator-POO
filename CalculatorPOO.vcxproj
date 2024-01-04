@@ -118,6 +118,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -128,12 +129,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Calculator.cpp" />
+    <ClCompile Include="CalculatorFaza2.cpp" />
     <ClCompile Include="CalculatorPOO.cpp" />
     <ClCompile Include="CalculationProcessor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Calculator.h" />
+    <ClInclude Include="CalculatorFaza2.h" />
     <ClInclude Include="Helper.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Operations.h" />
     <ClInclude Include="CalculationProcessor.h" />
     <ClInclude Include="Polinomials.h" />
