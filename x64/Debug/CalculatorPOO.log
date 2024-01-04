@@ -1,15 +1,7 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\amd64\Microsoft.Common.CurrentVersion.targets(5669,5): warning MSB3061: Unable to delete file "C:\Users\Emil\Desktop\Calculator-POO\x64\Debug\CalculatorPOO.exe". Access to the path 'C:\Users\Emil\Desktop\Calculator-POO\x64\Debug\CalculatorPOO.exe' is denied.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppClean.targets(77,5): warning : Access to the path 'c:\users\emil\desktop\calculator-poo\x64\debug\calculatorpoo.exe' is denied.
-  Calculator.cpp
+﻿  CalculatorFaza2.cpp
 C:\Users\Emil\Desktop\Calculator-POO\Menu.h(95,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\Emil\Desktop\Calculator-POO\Calculator.h(24,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\Helper.h(25,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(91,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(127,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  CalculatorFaza2.cpp
-C:\Users\Emil\Desktop\Calculator-POO\Menu.h(95,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\Calculator.h(24,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\CalculatorFaza2.h(419,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Emil\Desktop\Calculator-POO\CalculatorFaza2.h(433,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\Emil\Desktop\Calculator-POO\Helper.h(25,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(91,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(127,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
@@ -18,12 +10,6 @@ C:\Users\Emil\Desktop\Calculator-POO\CalculatorFaza2.cpp(30,73): warning C4267: 
   CalculatorPOO.cpp
 C:\Users\Emil\Desktop\Calculator-POO\Menu.h(95,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\Emil\Desktop\Calculator-POO\Calculator.h(24,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\CalculatorFaza2.h(419,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  CalculationProcessor.cpp
-C:\Users\Emil\Desktop\Calculator-POO\Menu.h(95,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\Calculator.h(24,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\Helper.h(25,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(91,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(127,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Emil\Desktop\Calculator-POO\CalculatorFaza2.h(433,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Generating Code...
-LINK : fatal error LNK1104: cannot open file 'C:\Users\Emil\Desktop\Calculator-POO\x64\Debug\CalculatorPOO.exe'
+  CalculatorPOO.vcxproj -> C:\Users\Emil\Desktop\Calculator-POO\x64\Debug\CalculatorPOO.exe

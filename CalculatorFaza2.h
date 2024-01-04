@@ -338,6 +338,20 @@ public:
             variables[0] = newVariable;
         }
         else {
+            for (int i = 0; i < variablesLength; i++) {
+                if (newVariable == variables[i]) {
+                    for (int j = i; j < variablesLength - 1; j++) {
+                        variables[j] = variables[j + 1];
+                    }
+                    variablesLength--;
+
+                    for (int j = i; j < variableValueLength; j++) {
+                        variableValue[j] = variableValue[j + 1];
+                    }
+                    variableValueLength--;
+                }
+            }
+
             string* variableCopies = new string[variablesLength];
 
             for (int i = 0; i < variablesLength; i++)
