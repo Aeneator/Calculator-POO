@@ -5,3 +5,4 @@ C:\Users\adi_p\Desktop\Programrare orientata pe obiecte\Proiect POO\CalculatorPO
 C:\Users\adi_p\Desktop\Facultate\Programrare orientata pe obiecte\Proiect POO\CalculatorPOO V1.5\x64\Debug\CalculatorPOO.exe
 C:\Users\adi_p\Desktop\Facultate\Programrare orientata pe obiecte\Proiect POO\CalculatorPOO main\x64\Debug\CalculatorPOO.exe
 C:\Users\Emil\Desktop\Calculator-POO\x64\Debug\CalculatorPOO.exe
+C:\Users\adi_p\Desktop\Calculator-POO\x64\Debug\CalculatorPOO.exe

@@ -1,15 +1,27 @@
-﻿  CalculatorFaza2.cpp
-C:\Users\Emil\Desktop\Calculator-POO\Menu.h(95,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\Calculator.h(24,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\CalculatorFaza2.h(433,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\Helper.h(25,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(91,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\CalculationProcessor.h(127,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\CalculatorFaza2.cpp(28,17): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\CalculatorFaza2.cpp(30,73): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+﻿  Calculator.cpp
+C:\Users\adi_p\Desktop\Calculator-POO\Menu.h(95,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(24,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\Helper.h(25,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(91,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CalculatorFaza2.cpp
+C:\Users\adi_p\Desktop\Calculator-POO\Menu.h(95,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(24,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculatorFaza2.h(433,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\Helper.h(25,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(91,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculatorFaza2.cpp(28,55): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculatorFaza2.cpp(30,130): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
   CalculatorPOO.cpp
-C:\Users\Emil\Desktop\Calculator-POO\Menu.h(95,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\Calculator.h(24,25): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\Emil\Desktop\Calculator-POO\CalculatorFaza2.h(433,36): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\Menu.h(95,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(24,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculatorFaza2.h(433,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  CalculationProcessor.cpp
+C:\Users\adi_p\Desktop\Calculator-POO\Menu.h(95,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\Calculator.h(24,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\Helper.h(25,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(91,1): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\adi_p\Desktop\Calculator-POO\CalculationProcessor.h(127,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Generating Code...
-  CalculatorPOO.vcxproj -> C:\Users\Emil\Desktop\Calculator-POO\x64\Debug\CalculatorPOO.exe
+  CalculatorPOO.vcxproj -> C:\Users\adi_p\Desktop\Calculator-POO\x64\Debug\CalculatorPOO.exe
