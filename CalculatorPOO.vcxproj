@@ -131,7 +131,6 @@
     <ClCompile Include="Calculator.cpp" />
     <ClCompile Include="CalculatorFaza2.cpp" />
     <ClCompile Include="CalculatorPOO.cpp" />
-    <ClCompile Include="CalculationProcessor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Calculator.h" />

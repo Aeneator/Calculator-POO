@@ -9,7 +9,7 @@ using namespace std;
 
 class CalculationProcessor {
 private:
-    int numberPrecision = 4;
+    int numberPrecision;
     void calculateSingleOperation(const char operationSymbol, char* str) {
 
         Operations op;
@@ -133,7 +133,7 @@ private:
 
 public:
     CalculationProcessor() {
-        setNumberPrecision(4);
+        setNumberPrecision(5);
     }
     CalculationProcessor(int _numberPrecision) {
         setNumberPrecision(_numberPrecision);

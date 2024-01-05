@@ -303,18 +303,6 @@ public:
         processNewInput();
     }
 
-    /*
-    void showResult() {
-        if (getValidInputFlag()) {
-            if (commandID == 0)
-                cout << "Result: " << mainInput << endl;
-        }
-        else {
-            strcpy_s(mainInput, maxInputSize, "Input was not valid.");
-            cout << mainInput << endl;
-        }
-    }*/
-
     static const int getMaxInputSize() {
         return maxInputSize;
     }
