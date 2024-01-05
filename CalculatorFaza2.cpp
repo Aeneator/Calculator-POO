@@ -28,9 +28,10 @@ void CalculatorFaza2::replaceVariablesWithValues(char* str) {
         int pos = mainInputAsString.find(variables[i]);
         if (pos != -1) {
             calcProcessor.replace(str, pos, pos + variables[i].length() - 1, variableValue[i], calcProcessor.getNumberPrecision());
-            i = 0;
+            i--;
         }
     }
+    
 }
 
 int CalculatorFaza2::checkForSaveVariable(char* str) {
@@ -53,6 +54,8 @@ int CalculatorFaza2::checkForSaveVariable(char* str) {
     addNewVariableToList(variableName);
 
     addNewVariableValueToList(outputHistory[outputHistoryLength - 1]);
+    cout << variableName << " = " << outputHistory[outputHistoryLength - 1] << endl;
+
 
     return 1;
 }

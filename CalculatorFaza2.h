@@ -1,7 +1,7 @@
 #pragma once
 #include "Calculator.h"
 
-class CalculatorFaza2 : public  Calculator{
+class CalculatorFaza2 : public  Calculator {
 private:
     string* variables;
     int variablesLength;
@@ -30,7 +30,7 @@ public:
         outputMethod = "console";
     }
 
-    CalculatorFaza2(CalculatorFaza2& obj){
+    CalculatorFaza2(CalculatorFaza2& obj) {
         commandID = obj.commandID;
         if (obj.getMainInput() != nullptr) {
             mainInput = new char[maxInputSize];
@@ -200,12 +200,26 @@ public:
                     string prefix = "file ";
                     string fileName = outputMethod.substr(prefix.length());
 
+                    ifstream inputFile(fileName);
+
+                    string line[200];
+                    int lineLength = 0;
+                    if (inputFile.is_open()) {
+                        while (getline(inputFile, line[lineLength])) {
+                            lineLength++;
+                        }
+
+                        inputFile.close();
+                    }
+
                     ofstream outputFile(fileName.c_str());
+
                     if (outputFile.is_open()) {
 
-                        for (int i = 0; i < inputHistoryEntries; i++) {
-                            outputFile << inputHistory[i] << " = " << outputHistory[i] << endl;
-                        }
+                        for (int i = 0; i < lineLength; i++)
+                            outputFile << line[i] << endl;
+
+                        outputFile << inputHistory[inputHistoryEntries - 1] << " = " << outputHistory[outputHistoryLength - 1] << endl;
 
                         outputFile.close();
                     }
@@ -220,7 +234,7 @@ public:
             }
         }
     }
-    
+
 
     void processNewInput() override {
 
@@ -295,7 +309,7 @@ public:
         if (menu.checkForLoadVariablesFromFileCustomName(mainInput)) {
             commandID = 63;
             string prefix = "loadvariablesfrom";
-            readFromBinaryFile(mainInput+prefix.length());
+            readFromBinaryFile(mainInput + prefix.length());
         }
 
         if (menu.checkForLoadExpressionsFromFile(mainInput)) {
@@ -319,9 +333,9 @@ public:
             commandID = 201;
             string prefix = "outputfile";
             string param = mainInput + prefix.length();
-            
-            if (param =="")
-                outputMethod = "file default.txt";
+
+            if (param == "")
+                outputMethod = "file defaultOutputFile.txt";
             else
                 outputMethod = "file " + param;
 
@@ -404,7 +418,7 @@ public:
     }
 
     void removeAllVariables() {
-        
+
         if (variables != nullptr) {
             delete[] variables;
         }
@@ -416,7 +430,7 @@ public:
 
         variables = nullptr;
         variableValue = nullptr;
-        
+
         variablesLength = 0;
         variableValueLength = 0;
     }
@@ -471,7 +485,7 @@ public:
             int variableValueLengthFile;
 
             file.read(reinterpret_cast<char*>(&variableValueLengthFile), sizeof(int));
-          
+
             double* variableValueFile = new double[variableValueLengthFile];
 
             file.read(reinterpret_cast<char*>(variableValueFile), variableValueLengthFile * sizeof(double));

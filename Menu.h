@@ -108,6 +108,10 @@ protected:
 		SetConsoleTextAttribute(h, FOREGROUND_RED);
 	}
 
+	void consoleBlue(HANDLE h) {
+		SetConsoleTextAttribute(h, FOREGROUND_BLUE);
+	}
+
 	void resetConsole(HANDLE h) {
 		SetConsoleTextAttribute(h, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE);
 	}
@@ -136,7 +140,6 @@ public:
 		cout <<"\nVariables" <<endl;
 		resetConsole(hConsole);
 		cout << "   After writing an expression and pressing ENTER,\n   the user cand type: \"save as var_name\" to save the last result as a variable" << endl;
-		//cout << "\n   That variable can be used in following expressions\n   Example : \n    1 + 1\n    Result : 2\n    save as var_name\n    var_name + 1\n    Result : 3"  << endl;
 		cout << "   Type \"show variables\" to SEE all current variables" << endl;
 		cout << "   Type \"remove variables\" to REMOVE all current variables" << endl;
 		cout << "   Type \"save variables\" to SAVE the current variables to the default text file" << endl;
