@@ -1,5 +1,6 @@
 #pragma once
 #include "Calculator.h"
+#include <vector>
 
 class CalculatorFaza2 : public  Calculator {
 private:
@@ -187,7 +188,7 @@ public:
 
             if (getValidInputFlag()) {
                 if (commandID == 0)
-                    cout << "Result: " << mainInput << endl;
+                    cout << mainInput << endl;
             }
             else {
                 strcpy_s(mainInput, maxInputSize, "Input was not valid.");
@@ -202,10 +203,13 @@ public:
 
                     ifstream inputFile(fileName);
 
-                    string line[200];
                     int lineLength = 0;
+                    vector<string> lines;
+                    string currentLine;
+                    
                     if (inputFile.is_open()) {
-                        while (getline(inputFile, line[lineLength])) {
+                        while (getline(inputFile, currentLine)) {
+                            lines.push_back(currentLine);
                             lineLength++;
                         }
 
@@ -217,7 +221,7 @@ public:
                     if (outputFile.is_open()) {
 
                         for (int i = 0; i < lineLength; i++)
-                            outputFile << line[i] << endl;
+                            outputFile << lines[i] << endl;
 
                         outputFile << inputHistory[inputHistoryEntries - 1] << " = " << outputHistory[outputHistoryLength - 1] << endl;
 
@@ -516,7 +520,7 @@ public:
         string line;
         while (getline(inputFile, line)) {
             readInput(line.c_str());
-            cout << line << endl;
+            cout << line << " = ";
             showResult();
         }
 

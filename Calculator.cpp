@@ -33,6 +33,9 @@ void Calculator::calculate() {
         mainInput[strlen(mainInput) - 1] = '\0';
     }
 
+    if (strcmp(mainInput, "-0") == 0)
+        strcpy_s(mainInput, 2, "0");
+
     addNewOutputHistoryEntry(Helper::charArrayToDouble(mainInput));
 
 }

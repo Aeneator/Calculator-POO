@@ -116,9 +116,37 @@ protected:
 
     bool isInputValid(char* input) {
         char validCharacters[] = { '1','2','3','4','5','6','7','8','9','0','(',')','[',']','-','+','*','/','#','^','.',' ','\0'};
+        string signs = "+-*/^#)]";
+        string numbers = "0123456789";
         for (int i = 0; i < strlen(input); i++)
             if (strchr(validCharacters, input[i]) == NULL)
                 return false;
+
+        
+        for (int i = 0; i < strlen(input); i++) {
+            if (input[i] == '.') {
+                for (int j = i + 1; j < strlen(input); j++) {
+                    if (strchr(numbers.c_str(), input[j]) == NULL) {
+                        if (strchr(signs.c_str(), input[j]) != NULL)
+                        {
+                            i = j;
+                            break;
+                        }
+                        else
+                            return false;
+                    } 
+                }
+            }
+        }
+
+        string signsThatShouldNotBeDoubled = "*/^#";
+
+        for (int i = 0; i < strlen(input) - 1; i++) {
+            if (strchr(signsThatShouldNotBeDoubled.c_str(), input[i]) != NULL && strchr(signsThatShouldNotBeDoubled.c_str(), input[i+1]) != NULL)
+            {
+                return false;
+            }
+        }
 
         return true;
     }
