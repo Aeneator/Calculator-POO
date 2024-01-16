@@ -45,15 +45,14 @@ void Calculator::displayHistory() {
     CalculationProcessor calcProcessor;
 
     cout << "Calculator History: " << endl;
-    
+
     for (int i = 0; i < inputHistoryEntries; i++) {
         cout << "Input[" << i << "]: " << inputHistory[i] << " = ";
-       
+
         char* temp = new char[maxInputSize];
         Helper::doubleToCharArray(outputHistory[i], temp, calcProcessor.getNumberPrecision());
         cout << temp << endl;
         delete[] temp;
-    
+
     }
 }
-

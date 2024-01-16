@@ -1,6 +1,0 @@
-10
-save as r
-3.14
-save as pi
-
-pi*r^2

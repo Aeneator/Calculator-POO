@@ -59,3 +59,23 @@ int CalculatorFaza2::checkForSaveVariable(char* str) {
 
     return 1;
 }
+
+void CalculatorFaza2::saveHistoryToFile() {
+    CalculationProcessor calcProcessor;
+
+    string fileName = "history.txt";
+    cout << "Calculator history has been saved \"" << fileName <<"\"" << endl;
+    
+    ofstream outputFile(fileName.c_str());
+
+    if (outputFile.is_open()) {
+
+        for (int i = 0; i < inputHistoryEntries; i++){
+            outputFile << inputHistory[i] << " = " << outputHistory[i] << endl;
+        }
+        outputFile.close();
+    }
+    else {
+        cout << "Error opening the file for writing." << endl;
+    }
+}

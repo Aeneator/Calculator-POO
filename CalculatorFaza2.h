@@ -277,6 +277,7 @@ public:
         if (menu.checkForClearScreen(mainInput)) {
             commandID = 777;
             system("cls");
+            cout << "Write \"help\" for Menu screen" << endl;
         }
 
         if (menu.checkForHelpCode(mainInput)) {
@@ -296,12 +297,12 @@ public:
 
         if (menu.checkForSaveVariablesToFile(mainInput)) {
             commandID = 60;
-            saveToBinaryFile(variables, variablesLength, variableValue, variableValueLength, "DefaultVariablesFile");
+            saveToBinaryFile(variables, variablesLength, variableValue, variableValueLength, "DefaultVariablesFile.bin");
         }
 
         if (menu.checkForLoadVariablesFromFile(mainInput)) {
             commandID = 61;
-            readFromBinaryFile("DefaultVariablesFile");
+            readFromBinaryFile("DefaultVariablesFile.bin");
         }
 
         if (menu.checkForSaveVariablesToFileCustomName(mainInput)) {
@@ -325,6 +326,11 @@ public:
         if (menu.checkForHistory(mainInput)) {
             commandID = 101;
             displayHistory();
+        }
+
+        if (menu.checkForSaveHistory(mainInput)) {
+            commandID = 102;
+            saveHistoryToFile();
         }
 
         if (menu.checkForOutPutMehtodConsole(mainInput)) {
@@ -520,7 +526,10 @@ public:
         string line;
         while (getline(inputFile, line)) {
             readInput(line.c_str());
-            cout << line << " = ";
+            if (outputMethod == "console" || getValidInputFlag() == false) {
+                if (commandID == 0)
+                    cout << line << " = ";
+            }
             showResult();
         }
 
@@ -528,6 +537,7 @@ public:
     }
 
     void displayVariables();
+    void saveHistoryToFile();
     int checkForSaveVariable(char* str);
     void replaceVariablesWithValues(char* str);
 
